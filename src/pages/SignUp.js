@@ -25,7 +25,7 @@ const SignUp = () => {
     setError("");
     setLoading(true);
     try {
-      await axios.post("http://localhost:5000/api/auth/send-otp", {
+      await axios.post("https://note-app-server2-krxk.onrender.com/api/auth/send-otp", {
         name: formData.name,
         dob: formData.dob,
         email: formData.email,
@@ -43,7 +43,7 @@ const SignUp = () => {
     setError("");
     setLoading(true);
     try {
-      await axios.post("http://localhost:5000/api/auth/verify-otp", formData);
+      await axios.post("https://note-app-server2-krxk.onrender.com/api/auth/verify-otp", formData);
       alert("Account created successfully!");
       // Optionally reset form or redirect
       navigate("/dashboard");
