@@ -16,7 +16,7 @@ const SignIn = () => {
     setError("");
     setLoading(true);
     try {
-      await axios.post("http://localhost:5000/api/auth/send-otp", { email });
+      await axios.post("https://note-app-server2-krxk.onrender.com/api/auth/send-otp", { email });
       setShowOtpInput(true);
     } catch (err) {
       setError(err.response?.data?.msg || "Failed to send OTP");
@@ -30,7 +30,7 @@ const SignIn = () => {
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/verify-otp",
+        "https://note-app-server2-krxk.onrender.com/api/auth/verify-otp",
         { email, otp }
       );
       localStorage.setItem("token", res.data.token);
