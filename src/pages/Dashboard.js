@@ -41,7 +41,7 @@ const Dashboard = () => {
     if (!content.trim()) return;
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/notes",
+        "https://note-app-server2-krxk.onrender.com/api/notes",
         { content },
         {
           headers: { Authorization: `Bearer ${token}` },
